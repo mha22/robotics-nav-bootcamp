@@ -23,7 +23,7 @@ double rad2deg(double rad){
 
 
 double normalize_angle_rad(double yaw_raw){
-    while (yaw_raw > M_PI_2)
+    while (yaw_raw > M_PI)
         yaw_raw -= 2 * M_PI;
     while (yaw_raw <= -M_PI)
         yaw_raw += 2 * M_PI;
