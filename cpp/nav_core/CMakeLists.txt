@@ -12,7 +12,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 add_library(nav_core src/pose2d.cpp)
-target_include_directories(nav_core PUBLIC include)
+target_include_directories(nav_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_options(nav_core PRIVATE -Wall -Wextra -Wpedantic)
 
 
@@ -23,3 +23,7 @@ target_compile_options(dead_reckoning PRIVATE -Wall -Wextra -Wpedantic)
 add_executable(test_pose2d tests/test_pose2d.cpp)
 target_link_libraries(test_pose2d PRIVATE nav_core)
 target_compile_options(test_pose2d PRIVATE -Wall -Wextra -Wpedantic)
+
+
+enable_testing()
+add_test(NAME pose2d_tests COMMAND test_pose2d)

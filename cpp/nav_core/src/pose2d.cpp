@@ -1,16 +1,7 @@
-#include<iostream>
-#include<nav/pose2d.hpp>
+#include "nav/pose2d.hpp"
 #include <cmath>
-using namespace std;
 
-
-double deg2rad(double deg);
-double rad2deg(double rad);
-double normalize_angle_rad(double a);
-Pose2D integrate_body_twist(const Pose2D& p, double v, double w_rad, double dt);
-
-
-
+namespace nav {
 
 double deg2rad(double deg){
     return deg * M_PI / 180;
@@ -39,4 +30,7 @@ Pose2D integrate_body_twist(const Pose2D& p, double v, double w_rad, double dt){
     double y2 = p.y + v * dt * sin(p.yaw_rad);
     yaw2_rad = normalize_angle_rad(yaw2_rad);
     return Pose2D {x2, y2, yaw2_rad};
+}
+
+
 }
