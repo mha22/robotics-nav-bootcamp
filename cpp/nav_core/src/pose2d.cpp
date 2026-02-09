@@ -1,5 +1,5 @@
-#include "nav/pose2d.hpp"
 #include <cmath>
+#include "nav/pose2d.hpp"
 
 namespace nav {
 

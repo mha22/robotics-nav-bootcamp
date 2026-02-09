@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 
-add_library(nav_core src/pose2d.cpp)
+add_library(nav_core src/pose2d.cpp src/transform2d.cpp)
 target_include_directories(nav_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_options(nav_core PRIVATE -Wall -Wextra -Wpedantic)
 
