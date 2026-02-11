@@ -24,6 +24,17 @@ add_executable(test_pose2d tests/test_pose2d.cpp)
 target_link_libraries(test_pose2d PRIVATE nav_core)
 target_compile_options(test_pose2d PRIVATE -Wall -Wextra -Wpedantic)
 
+add_executable(test_transform2d tests/test_transform2d.cpp)
+target_link_libraries(test_transform2d PRIVATE nav_core)
+target_compile_options(test_transform2d PRIVATE -Wall -Wextra -Wpedantic)
+
+
+add_executable(frame_transform_demo src/frame_transform_demo.cpp)
+target_link_libraries(frame_transform_demo PRIVATE nav_core)
+target_compile_options(frame_transform_demo PRIVATE -Wall -Wextra -Wpedantic)
+
 
 enable_testing()
 add_test(NAME pose2d_tests COMMAND test_pose2d)
+add_test(NAME transform2d_t COMMAND test_transform2d)
+

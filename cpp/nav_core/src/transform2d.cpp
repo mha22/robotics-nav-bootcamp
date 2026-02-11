@@ -1,4 +1,4 @@
-#include <cmath> 
+#include <cmath>
 #include "nav/transform2d.hpp"
 
 namespace nav {
