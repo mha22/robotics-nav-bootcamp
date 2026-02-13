@@ -36,5 +36,5 @@ target_compile_options(frame_transform_demo PRIVATE -Wall -Wextra -Wpedantic)
 
 enable_testing()
 add_test(NAME pose2d_tests COMMAND test_pose2d)
-add_test(NAME transform2d_t COMMAND test_transform2d)
+add_test(NAME transform2d_tests COMMAND test_transform2d)
 

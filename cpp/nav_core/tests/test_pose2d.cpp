@@ -1,22 +1,21 @@
-#include<iostream>
-#include <cmath>
 #include <cassert>
+#include <cmath>
+#include <iostream>
+
 #include "nav/pose2d.hpp"
 
-namespace{
-bool near(double a, double b, double eps=1e-9){return fabs(a - b) < eps;}
-}
+namespace {
+bool near(double a, double b, double eps = 1e-9) { return fabs(a - b) < eps; }
+}  // namespace
 
-
-
-int main(){
-    using nav::Pose2D;
+int main() {
     using nav::deg2rad;
-    using nav::normalize_angle_rad;
     using nav::integrate_body_twist;
+    using nav::normalize_angle_rad;
+    using nav::Pose2D;
 
     assert(near(deg2rad(180), M_PI));
-    assert(near(normalize_angle_rad(M_PI + 0.1), - M_PI + 0.1));
+    assert(near(normalize_angle_rad(M_PI + 0.1), -M_PI + 0.1));
 
     Pose2D p = {2.0, 0.0, 0.0};
     Pose2D q = integrate_body_twist(p, 1.0, 0.0, 2.0);
@@ -27,5 +26,3 @@ int main(){
     std::cout << "All tests passed" << std::endl;
     return 0;
 }
-
-

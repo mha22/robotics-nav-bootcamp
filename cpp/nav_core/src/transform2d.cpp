@@ -1,9 +1,10 @@
-#include <cmath>
 #include "nav/transform2d.hpp"
+
+#include <cmath>
 
 namespace nav {
 
-Vec2 apply(const Transform2D& T, const Vec2& p){
+Vec2 apply(const Transform2D& T, const Vec2& p) {
     const double theta = normalize_angle_rad(T.yaw_rad);
     const double c = std::cos(theta);
     const double s = std::sin(theta);
@@ -14,8 +15,7 @@ Vec2 apply(const Transform2D& T, const Vec2& p){
     return q;
 }
 
-
-Transform2D compose(const Transform2D& A, const Transform2D& B){
+Transform2D compose(const Transform2D& A, const Transform2D& B) {
     const double theta = normalize_angle_rad(A.yaw_rad);
     const double c = std::cos(theta);
     const double s = std::sin(theta);
@@ -27,8 +27,7 @@ Transform2D compose(const Transform2D& A, const Transform2D& B){
     return C;
 }
 
-
-Transform2D inverse(const Transform2D& T){
+Transform2D inverse(const Transform2D& T) {
     const double theta = normalize_angle_rad(T.yaw_rad);
     const double c = std::cos(theta);
     const double s = std::sin(theta);
